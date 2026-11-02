@@ -178,6 +178,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 </script>
 <script>
+const PROJECT_ID = 'ee6081d44f535b82b71aa2003badb2b7'; // AppKit project ID — wired for BOT Chain 677
+
 let price=1.2345,dir=1,lev=10,hist=[],positions=[{id:1,long:true,size:2500,entry:1.18,lev:25,open:true},{id:2,long:false,size:900,entry:1.31,lev:10,open:true}],nid=3;
 for(let i=0;i<120;i++){price*=1+(Math.random()-.5)*.012;hist.push(price)}
 const f=(n,d=4)=>(+n).toFixed(d);
