@@ -1,9 +1,9 @@
 {
-  "abiSource": "pending-current-source",
+  "abiSource": "runtime-matched-current-source",
   "repo": "fulcrum",
   "brand": "Fulcrum",
   "summary": "Open collateral-backed long or short positions with up to 10× notional exposure. An owner-maintained price governs settlement; gains and losses are capped at the deposited margin.",
-  "address": null,
+  "address": "0x6e89471298784f4B4f9C56927B643C6F3Afe78a2",
   "owner": null,
   "abi": [
     {

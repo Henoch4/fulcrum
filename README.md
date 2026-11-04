@@ -1,10 +1,10 @@
 # Fulcrum
 
-Inspect perpetual position records. Prices are supplied by participants; this prototype has no external market-price oracle.
+Open collateral-backed long or short positions with up to 10× notional exposure. An owner-maintained price governs settlement; gains and losses are capped at the deposited margin.
 
 ## Mainnet status
 
-Mainnet deployment is pending. The interface does not simulate transactions or balances.
+Contract on BOT Chain mainnet (677): [0x6e89471298784f4B4f9C56927B643C6F3Afe78a2](https://scan.botchain.ai/address/0x6e89471298784f4B4f9C56927B643C6F3Afe78a2).
 
 Wallet actions require BOT Chain mainnet, deployed bytecode, and a connected compatible wallet. Every action is simulated before a transaction review; only a subsequent wallet confirmation can send it.
 
@@ -19,13 +19,17 @@ Wallet actions require BOT Chain mainnet, deployed bytecode, and a connected com
 
 ## Contract interface
 
-`frontend/product.json` uses the ABI compiled from the current Solidity source.
+`frontend/product.json` uses the current-source ABI, matched against the deployed mainnet runtime bytecode. Explorer source publication is tracked separately.
 
 | Action | Contract signature |
 |---|---|
 | Close your position | `closePosition(uint256,uint256)` |
+| Close after an oracle outage | `closeStalePosition(uint256)` |
+| Fund the collateral reserve (owner only) | `fundReserve()` |
 | Open a position | `openPosition(bool,uint256,uint256,uint256)` |
+| Publish the market price (owner only) | `setMarketPrice(uint256)` |
 | Update a position price (owner only) | `updatePrice(uint256,uint256)` |
+| Withdraw available reserve (owner only) | `withdrawReserve(uint256)` |
 
 ## Run locally
 
